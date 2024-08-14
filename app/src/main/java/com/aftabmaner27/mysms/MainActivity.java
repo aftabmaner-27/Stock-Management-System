@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int SPLASH_TIME_OUT = 3000; // 3 seconds
     private static final int STORAGE_PERMISSION_CODE = 1;
 
+    private String mappName="SMS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
