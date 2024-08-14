@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String mFullAppName="Stock Management System ";
 
+    private String mName="Stock Management System branch 2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
