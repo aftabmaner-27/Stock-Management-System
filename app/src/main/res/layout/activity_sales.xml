@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sms_color_third_blue"
+    tools:context=".SalesActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="Sales Product"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/common_ui">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/Product_Name"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Product Name" />
+
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/Product_Description"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="5dp"
+                    android:hint="Product Description" />
+
+                <EditText
+                    android:id="@+id/Qunatity"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="5dp"
+                    android:hint="Qunatity" />
+
+                <EditText
+                    android:id="@+id/Price"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="5dp"
+                    android:hint="MRP" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Select GST"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+
+                <Spinner
+                    android:id="@+id/spn_gst"
+                    style="@style/smsGridEditTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/totalqty_Amt"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:padding="7dp"
+                    android:hint="Total Ammount" />
+
+                <TextView
+                    android:id="@+id/Total_Ammount"
+                    style="@style/smsGridEditTextField"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="5dp"
+                    android:hint="GST Total Ammount" />
+
+
+                <TextView
+                    android:id="@+id/btn_Save"
+                    style="@style/smsCommonButton"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Sell"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

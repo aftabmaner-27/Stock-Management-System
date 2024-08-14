@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#1766ae</color>
+    <color name="purple_700">#1766ae</color>
+    <color name="teal_200">#070707</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="sms_primary_blue">#00acd7</color>
+    <color name="sms_color_secondary_blue">#006c87</color>
+    <!--    <color name="sms_color_third_blue">#1b3a4e</color>-->
+    <color name="sms_color_main_text_blue">#1766ae</color>
+    <color name="sms_color_btnSearch_blue">#077e9c</color>
+    <color name="sms_color_required_blue">#800000</color>
+
+    <color name="sms_color_third_blue">#1766ae</color>
+
+</resources>
