@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String mappName="SMS";
 
+    private String mFullAppName="Stock Management System ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
