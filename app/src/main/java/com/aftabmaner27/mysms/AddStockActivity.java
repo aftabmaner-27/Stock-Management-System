@@ -1,15 +1,19 @@
 package com.aftabmaner27.mysms;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,14 +26,18 @@ public class AddStockActivity extends AppCompatActivity {
 
     private EditText productNameEdt, productDescpritonEdt, priceEdt, qunatityEdt;
     private TextView btnAddStock, btnUpdateStock, qty_Ammount, totalAmmountEdt;
-    private Spinner spnGSTList,spnVendorList;
+    private Spinner spnGSTList,spnVendorList,navegitespn_gst;
     private String gstRateInput = "0";
+    private Switch btnSwtMinusGST;
     private DBHandler dbHandler;
     ArrayAdapter<String> vendoradapter ;
+    private ToggleButton toggleButton;
 
     private String[] mArrSpnGSTList = {"0%", "5%", "12%", "18%", "28%"};
+
     private String[] mArrSpnVendorList = {"vendor1", "vendor2", "vendor3", "vendor4"};
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +46,8 @@ public class AddStockActivity extends AppCompatActivity {
 
 
         dbHandler = new DBHandler(AddStockActivity.this);
-
+        toggleButton = findViewById(R.id.toggleButton);
+        btnSwtMinusGST = findViewById(R.id.btnSwtMinusGST);
         productNameEdt = findViewById(R.id.Product_Name);
         productDescpritonEdt = findViewById(R.id.Product_Description);
         qunatityEdt = findViewById(R.id.Qunatity);
@@ -50,7 +59,11 @@ public class AddStockActivity extends AppCompatActivity {
         btnUpdateStock = findViewById(R.id.btn_Update);
 
         spnGSTList = findViewById(R.id.spn_gst);
+        navegitespn_gst = findViewById(R.id.navegitespn_gst);
         spnVendorList = findViewById(R.id.spn_vendors);
+
+
+
 
 
         // Get data from the database
@@ -90,6 +103,38 @@ public class AddStockActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // Do nothing
+            }
+        });
+
+
+        // Set an OnClickListener to handle toggle changes
+      /*  toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // The toggle is enabled
+                Toast.makeText(AddStockActivity.this, "Toggle ON", Toast.LENGTH_SHORT).show();
+            } else {
+                // The toggle is disabled
+                Toast.makeText(AddStockActivity.this, "Toggle OFF", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
+
+
+        btnSwtMinusGST.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                try {
+                    if (isChecked) {
+                        btnSwtMinusGST.setChecked(true);
+                        navegitespn_gst.setVisibility(View.VISIBLE);
+                        spnGSTList.setVisibility(View.GONE);
+                    } else {
+                        btnSwtMinusGST.setChecked(false);
+                        navegitespn_gst.setVisibility(View.GONE);
+                        spnGSTList.setVisibility(View.VISIBLE);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
